@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>news</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-textarea [(ngModel)]="titulo" placeholder="Digite o título"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-textarea [(ngModel)]="subtitulo" placeholder="Digite o sub-título"></ion-textarea>
+  </ion-item>
+  
+  <ion-button (click)="enviarAlerta(titulo, subtitulo)" expand="full" color="secondary">Cadastrar</ion-button>
+
+  <ion-card *ngFor="let news of newslist">
+    <ion-card-content>
+      Título: {{news.titulo}}
+      <br />
+      Subtitulo: {{news.subtitulo}}
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
